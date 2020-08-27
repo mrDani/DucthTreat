@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row">
+    <div class="col-md-9">
+        <div class="product-info">
+            <img src="~/img/003.jpg" style="width:90%;" />
+            <h3>Car</h3>
+            <ul class="product-props">
+                <li>Price : $1000</li>
+                <li>Model : Benz</li>
+                <li>Model : </li>
+                <li>Description : Self-driving</li>
+            </ul>
+            <button id="buyButton" class="btn btn-success">Buy</button>
+        </div>
+        <div id="theForm">
+            <form>
+                <label>Username:</label>
+                <br />
+                <input type="text" />
+                <br />
+                <label>Email::</label>
+                <br />
+                <input type="email" />
+                <br />
+                <label>Subject:</label>
+                <br />
+                <input type="text" />
+                <br />
+                <label>Message</label>
+                <br />
+                <textarea rows="4"></textarea>
+                <br />
+                <input type="submit" value="Send message" />
+            </form>
+        </div>
+
+        <div>
+            <div id="loginToggle">Login</div>
+            <form class="popup-form">
+                <div>
+                    <label>Username</label>
+                    <input type="text" />
+                </div>
+                <div>
+                    <label>password</label>
+                    <input type="password" />
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label>Remember Me?</label>
+                </div>
+                <div>
+                    <input type="submit" value="Login" />
+                </div>
+            </form>
+        </div> 
+    </div>
+    <div class="col-md-3">
+        <p>This is a fun site of buying dutch treat goods.</p>
+    </div>
+</div>
