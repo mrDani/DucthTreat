@@ -10,6 +10,11 @@ export class DataService {
 
     constructor(private http: HttpClient) {  }
 
+    private token: string ="";
+
+    private tokenExpiration: Date;
+
+ 
     public order: Order = new Order(); 
 
     public products: Product[] = [];
@@ -21,6 +26,21 @@ export class DataService {
                     this.products = data;
                 return true;
                 })
+            );
+    }
+
+    public get loginRequired(): boolean {
+        return this.token.length == 0 || this.tokenExpiration > new Date();
+    }
+
+    login(creds): Observable<boolean> {
+            return  this.http.post("/account/createtoken", creds)
+            .pipe(          map((data: any) => {
+            this.token = data.token;
+            this.tokenExpiration = data.expiration;
+            return true;
+
+        })    
             );
     }
 
